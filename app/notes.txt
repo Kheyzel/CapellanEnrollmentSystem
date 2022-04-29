@@ -1,0 +1,6 @@
+            $payment->save();
+            activity('Enrollment Logs')
+            ->causedBy(Auth::user())
+            ->performedOn($student)
+            ->createdAt(now())
+            ->log('Enroll Student');
